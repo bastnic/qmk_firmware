@@ -19,12 +19,13 @@ extern uint8_t is_master;
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
 enum layers {
-  _QWERTY,
+  _BEPO,
   _LOWER,
   _RAISE,
   _ADJUST,
   _NUMBER,
-  _SIGNS
+  _SIGNS,
+  _GAMING
 };
 
 // Custom keycodes for layer keys
@@ -42,7 +43,7 @@ enum custom_keycodes {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_QWERTY] = LAYOUT(
+  [_BEPO] = LAYOUT(
   //,-----------------------------------------.                ,---------------------------------------------.
     BP_W,  KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                  KC_Y, BP_V ,KC_I,  KC_O,  KC_P, BP_Z,
   //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
@@ -82,9 +83,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
       RESET,RGBRST, KC_NO, KC_NO, KC_NO, KC_NO,                  KC_MPRV,KC_MPLY, KC_MNXT, KC_NO, KC_NO, KC_NO,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    RGB_TOG,RGB_HUI,RGB_SAI,RGB_VAI,RGB_SPI,KC_NO,               KC_AUDIO_MUTE,KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,               KC_AUDIO_MUTE,KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    RGB_MOD,RGB_HUD,RGB_SAD,RGB_VAD,RGB_SPD,KC_NO,               KC_SCROLLLOCK,KC_VOLD, KC_NO, KC_NO, KC_NO, RGB_RMOD,
+    TG(6),KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,               KC_SCROLLLOCK,KC_VOLD, KC_NO, KC_NO, KC_NO, RGB_RMOD,
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                 KC_LGUI, LOWER,KC_SPC,   KC_ENT, RAISE,KC_RALT
                               //`--------------------'  `--------------------'
@@ -112,6 +113,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                 KC_NO, BP_UNDS,KC_NO,   KC_NO, KC_NO, KC_NO
                               //`--------------------'  `--------------------'
+  ),
+  [_GAMING] = LAYOUT(
+  //,-----------------------------------------.                ,---------------------------------------------.
+    BP_W,  KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,                  KC_Y, BP_V ,KC_I,  KC_O,  KC_P, BP_Z,
+  //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
+    KC_TAB,  KC_A,  KC_S,  KC_D, KC_F,  KC_G,                 BP_C,  BP_T,  KC_K,  KC_L, KC_SCLN, KC_QUOT,
+  //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
+    KC_LSFT,  KC_Z,  BP_Y,  KC_C,  KC_V,  KC_B,                KC_N,  KC_M,KC_COMM,BP_H,BP_F, RSFT_T(BP_CCED),
+  //|------+------+------+------+------+------+------|  |------+------+------+-------+------+-------+--------|
+                        KC_LCTL,KC_SPC, KC_ENT,            TG(6), KC_BSPC, KC_RACL
+                             //`--------------------'  `--------------------'
   )
 };
 
