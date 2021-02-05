@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
     LSFT_T(KC_CAPSLOCK),  KC_Z,  BP_Y,  KC_C,  KC_V,  KC_B,      KC_N,  KC_M,KC_COMM,BP_H,BP_F, RSFT_T(BP_CCED),
   //|------+------+------+------+------+------+------|  |------+------+------+-------+------+-------+--------|
-                        LALT_T(KC_LGUI),LT(1, KC_SPC), LALT_T(KC_ENT),   RCTL_T(KC_ENT), LT(2, KC_BSPC), KC_RACL
+                        LALT_T(KC_LGUI),LT(1, KC_SPC), LALT_T(KC_ENT),   RCTL_T(KC_ENT), LT(2, KC_BSPC),KC_RACL 
                               //`--------------------'  `--------------------'
   ),
 
@@ -290,7 +290,7 @@ void render_logo(void) {
         0xa0, 0xa1, 0xa2, 0xa3, 0xa4,
         0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0};
     oled_write_P(corne_logo, false);
-    oled_write_P(PSTR("corne"), false);
+    oled_write_P(PSTR("Bqbqr"), false);
 }
 
 void render_layer_state(void) {
@@ -400,7 +400,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         } else {
           unregister_code(KC_RALT);
           if (timer_elapsed(my_colon_timer) < TAPPING_TERM) {
-            SEND_STRING("V"); // Change the character(s) to be sent on tap here
+            register_code(KC_ESC); // Change the character(s) to be sent on tap here
           }
         }
         return false;
