@@ -401,6 +401,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           unregister_code(KC_RALT);
           if (timer_elapsed(my_colon_timer) < TAPPING_TERM) {
             register_code(KC_ESC); // Change the character(s) to be sent on tap here
+            unregister_code(KC_ESC); // Change the character(s) to be sent on tap here
           }
         }
         return false;
