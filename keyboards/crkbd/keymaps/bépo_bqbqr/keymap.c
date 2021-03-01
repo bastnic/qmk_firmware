@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
       RESET,RGBRST, KC_NO, KC_NO, KC_NO, KC_NO,                  KC_MPRV,KC_MPLY, KC_MNXT, KC_NO, KC_NO, KC_NO,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,               KC_AUDIO_MUTE,KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO,KC_NO,KC_NO,KC_NO,KC_PSCREEN,KC_NO,               KC_AUDIO_MUTE,KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
     TG(6),KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,               KC_SCROLLLOCK,KC_VOLD, KC_NO, KC_NO, KC_NO, RGB_RMOD,
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -290,7 +290,7 @@ void render_logo(void) {
         0xa0, 0xa1, 0xa2, 0xa3, 0xa4,
         0xc0, 0xc1, 0xc2, 0xc3, 0xc4, 0};
     oled_write_P(corne_logo, false);
-    oled_write_P(PSTR("Bqbqr"), false);
+    oled_write_P(PSTR("Corne"), false);
 }
 
 void render_layer_state(void) {
@@ -401,6 +401,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           unregister_code(KC_RALT);
           if (timer_elapsed(my_colon_timer) < TAPPING_TERM) {
             register_code(KC_ESC); // Change the character(s) to be sent on tap here
+            unregister_code(KC_ESC); // Change the character(s) to be sent on tap here
           }
         }
         return false;

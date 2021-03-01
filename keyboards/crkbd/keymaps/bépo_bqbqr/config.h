@@ -35,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define USE_SERIAL_PD2
 
 // #define TAPPING_FORCE_HOLD
-#define TAPPING_TERM 160
+#define TAPPING_TERM 200
 //#define RETRO_TAPPING
 //#define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
