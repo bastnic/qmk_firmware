@@ -77,3 +77,8 @@ __pycache__
 
 # Allow to exist but don't include it in the repo
 user_song_list.h
+keyboards/crkbd/keymaps/bepo_laurent/config.h
+keyboards/crkbd/keymaps/bepo_laurent/glcdfont.c
+keyboards/crkbd/keymaps/bepo_laurent/keymap.c
+keyboards/crkbd/keymaps/bepo_laurent/README.md
+keyboards/crkbd/keymaps/bepo_laurent/rules.mk

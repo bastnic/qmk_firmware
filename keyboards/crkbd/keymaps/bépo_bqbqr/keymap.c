@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
     LSFT_T(KC_CAPSLOCK),  KC_Z,  BP_Y,  KC_C,  KC_V,  KC_B,      KC_N,  KC_M,KC_COMM,BP_H,BP_F, RSFT_T(BP_CCED),
   //|------+------+------+------+------+------+------|  |------+------+------+-------+------+-------+--------|
-                        LALT_T(KC_LGUI),LT(1, KC_SPC), LALT_T(KC_ENT),   RCTL_T(KC_ENT), LT(2, KC_BSPC),KC_RACL 
+                        KC_LGUI,LT(1, KC_SPC), LALT_T(KC_ENT),   RCTL_T(KC_ENT), LT(2, KC_BSPC),KC_RACL 
                               //`--------------------'  `--------------------'
   ),
 
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+-------+-------+-------+-------|                |------+------+------+------+------+------|
     KC_LSFT, KC_NO, KC_NO, LCTL(BP_X),LCTL(BP_C),LCTL(BP_V),        KC_HOME,KC_LEFT,KC_DOWN,KC_RIGHT,KC_PGDN,KC_NO,
   //|------+------+-------+-------+-------+-------+------|  |------+------+------+------+------+------+------|
-                                    KC_LGUI, LOWER,KC_SPC,   KC_ENT, RAISE,KC_RALT
+                                    KC_LGUI, LOWER,KC_SPC,   KC_ENT, RAISE,KC_LALT
                                   //`--------------------'  `--------------------'
  ),
 
@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
     KC_LCTL, KC_F6, KC_F7, KC_F8, KC_F9,KC_F12,                KC_UNDS,KC_PLUS,KC_LBRC,KC_RBRC,KC_BSLS,KC_TILD,
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                KC_LGUI, LOWER,KC_SPC,   KC_ENT, RAISE,KC_RALT
+                                KC_LGUI, LOWER,KC_SPC,   KC_ENT, RAISE,KC_LALT
                               //`--------------------'  `--------------------'
   ),
 
