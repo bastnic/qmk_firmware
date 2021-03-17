@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "keymap_bepo.h"
+#include "sendstring_bepo.h"
 
 extern keymap_config_t keymap_config;
 
@@ -39,6 +40,7 @@ enum custom_keycodes {
   ADJUST,
   RGBRST,
   KC_RACL, // right alt / colon
+  PHP_ACCESSOR, // print str "->"
 };
 
 
@@ -107,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------.                ,-----------------------------------------.
     BP_AMPR, BP_LESS, BP_GRTR, BP_LBRC, BP_RBRC, BP_AT,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    BP_PIPE, BP_SLSH, BP_BSLS, BP_LPRN, BP_RPRN, BP_DLR ,      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    BP_PIPE, BP_SLSH, BP_BSLS, BP_LPRN, BP_RPRN, BP_DLR ,      KC_NO, KC_NO, PHP_ACCESSOR, KC_NO, KC_NO, KC_NO,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
     BP_CIRC, BP_LGIL, BP_RGIL, BP_LCBR, BP_RCBR, BP_TILD, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
@@ -405,6 +407,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           }
         }
         return false;
+    case PHP_ACCESSOR:
+         if (record->event.pressed) {
+            // when keycode PHP_ACCESSOR is pressed
+            SEND_STRING("->");
+        } else {
+            // when keycode PHP_ACCESSOR is released
+        }
+        break;
     case RGBRST:
       #ifdef RGBLIGHT_ENABLE
         if (record->event.pressed) {
