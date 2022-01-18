@@ -37,36 +37,36 @@ enum layer_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_reviung41(
-// ,--------+--------+--------+--------+--------+--------.                    ,--------+--------+--------+--------+--------+--------.
+  //,-----------------------------------------.                ,---------------------------------------------.
     BP_W,    BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV,                      BP_DCIR, BP_V,    BP_D,    BP_L,    BP_J,    BP_Z,
-// |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_SFTAB,BP_A,    BP_U,    BP_I, LT(4,BP_E), BP_COMM,                      BP_C,  LT(5,BP_T),    BP_S,    BP_R,    BP_N,    BP_M,
-// |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,                         BP_QUOT, BP_Q,    BP_G,    BP_H,    BP_F,    RSFT_T(BP_CCED),
-// |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                            KC_LGUI,LT(1, KC_SPC), LALT_T(KC_ENT),  LT(2, KC_BSPC),KC_RACL 
-                                     //`--------+--------+--------+--------+--------'
+  //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
+    LCTL_T(KC_TAB),BP_A,    BP_U,    BP_I, LT(4,BP_E), BP_COMM,                      BP_C,  LT(5,BP_T),    BP_S,    BP_R,    BP_N,    BP_M,
+  //|------+------+------+------+------+------|                |------+------+-------+------+-------+--------|
+    KC_LSFT, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,                           BP_QUOT, BP_Q,    BP_G,    BP_H,    BP_F,    ALGR_T(BP_CCED),
+  //|------+------+------+------+------+------+------|  |------+------+------+-------+------+-------+--------|
+                        KC_LGUI,LT(1, KC_SPC),   RCTL_T(KC_ENT), LT(2, KC_BSPC),KC_RSFT 
+                              //`--------------------'  `--------------------'
   ),
   
   [_LOWER] = LAYOUT_reviung41(
-  //,---------------------------------------------.                ,-----------------------------------------.
-     KC_ESC,  KC_1, KC_2,   KC_3,   KC_4,   KC_5,                    KC_6,  KC_7,  KC_8,  KC_9,  KC_0, KC_DEL,
+    //,---------------------------------------------.                ,-----------------------------------------.
+     KC_ESC,  KC_1, KC_2,   KC_3,   KC_4,   KC_5,                    KC_6,  KC_7,  KC_UP,  KC_9,  KC_PGUP, KC_DEL,
   //|------+------+-------+-------+-------+-------|                |------+------+------+------+------+------|
-    KC_LSFT, KC_NO, KC_NO, LCTL(BP_Y),LCTL(BP_Z),KC_NO,             KC_NO, KC_MS_WH_UP,  KC_UP, KC_MS_WH_DOWN,KC_PGUP,KC_NO,
+    KC_LCTL, KC_NO, KC_NO, LCTL(BP_Y),LCTL(BP_Z),KC_NO,             KC_HOME, KC_LEFT,  KC_DOWN, KC_RIGHT,KC_PGDN,KC_NO,
   //|------+------+-------+-------+-------+-------|                |------+------+------+------+------+------|
-    KC_LCTL, KC_NO, KC_NO, LCTL(BP_X),LCTL(BP_C),LCTL(BP_V),        KC_HOME,KC_LEFT,KC_DOWN,KC_RIGHT,KC_PGDN,KC_NO,
+    KC_LSFT, KC_NO, KC_NO, LCTL(BP_X),LCTL(BP_C),LCTL(BP_V),        KC_END,KC_NO,KC_NO,KC_NO,KC_NO,KC_NO,
   //|------+------+-------+-------+-------+-------+------|  |------+------+------+------+------+------+------|
-                                    KC_LGUI, LOWER, KC_ENT, RAISE,KC_LALT
+                                    KC_LGUI, LOWER,   KC_ENT, RAISE,KC_LALT
                                   //`--------------------'  `--------------------'
-  ),
+ ),
   
   [_RAISE] = LAYOUT_reviung41(
   //,-----------------------------------------.                ,-----------------------------------------.
-     KC_ESC,KC_EXLM,KC_AT,KC_HASH,KC_DLR,KC_PERC,              KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,KC_RPRN,KC_BSPC,
+     KC_ESC,KC_EXLM,KC_AT,KC_HASH,KC_DLR,KC_PERC,              KC_CIRC,KC_AMPR,KC_UP,KC_LPRN,KC_PGUP,KC_BSPC,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    KC_LSFT, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                KC_MINS,KC_EQL,KC_LCBR,KC_RCBR,KC_PIPE,KC_GRV,
+    KC_LCTL, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                KC_HOME, KC_LEFT,  KC_DOWN, KC_RIGHT,KC_PGDN,KC_NO,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    KC_LCTL, KC_F6, KC_F7, KC_F8, KC_F9,KC_F12,                KC_UNDS,KC_PLUS,KC_LBRC,KC_RBRC,KC_BSLS,KC_TILD,
+    KC_LCTL, KC_F6, KC_F7, KC_F8, KC_F9,KC_F12,                KC_END,KC_NO,KC_NO,KC_NO,KC_NO, KC_NO,
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
                                 KC_LGUI, LOWER,   KC_ENT, RAISE,KC_LALT
                               //`--------------------'  `--------------------'
@@ -89,22 +89,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
     KC_NO,  KC_NO, BP_DOT, BP_DLR, KC_NO, KC_NO,                 BP_HASH, BP_4, BP_5, BP_6, BP_ASTR, BP_EQL,
   //|------+------+------+------+------+------|                |------+------+------+------+------+------|
-    KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                  BP_PERC, BP_1, BP_2, BP_3, BP_MINS, KC_ENT,
+    KC_LSFT,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                  BP_PERC, BP_1, BP_2, BP_3, BP_MINS, BP_DOT,
   //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
-                                KC_LGUI, LOWER, KC_ENT, BP_PLUS, BP_0
+                                KC_LGUI, LOWER,    KC_ENT, BP_PLUS, BP_0
                               //`--------------------'  `--------------------'
   ),
 
   [_SIGNS] = LAYOUT_reviung41(
-    // ,--------+--------+--------+--------+--------+--------.                    ,--------+--------+--------+--------+--------+--------.
-    BP_DLR,  BP_DQUO, BP_LDAQ, BP_RDAQ, BP_LPRN, BP_RPRN,                      BP_AT,   BP_PLUS, BP_MINS, BP_SLSH, BP_ASTR, BP_EQL,
-// |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_LSFT, BP_AMPR, BP_LESS, BP_GRTR, BP_LBRC, BP_RBRC,                      KC_INS,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, BP_PERC,
-// |--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-    KC_LCTL, BP_PIPE, BP_BSLS, BP_SLSH, BP_LCBR, BP_RCBR,                      KC_BSPC, KC_DEL,  XXXXXXX, XXXXXXX, XXXXXXX, KC_RSFT,
-// |--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------
-                                              KC_NO, BP_UNDS, KC_NO, KC_NO, KC_NO
-                                             //`--------------------'  `--------------------'
+  //,-----------------------------------------.                ,-----------------------------------------.
+    BP_AMPR, BP_LESS, BP_GRTR, BP_LBRC, BP_RBRC, BP_AT,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+  //|------+------+------+------+------+------|                |------+------+------+------+------+------|
+    BP_PIPE, BP_SLSH, BP_BSLS, BP_LPRN, BP_RPRN, BP_DLR ,      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+  //|------+------+------+------+------+------|                |------+------+------+------+------+------|
+    BP_CIRC, BP_LGIL, BP_RGIL, BP_LCBR, BP_RCBR, BP_TILD, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+  //|------+------+------+------+------+------+------|  |------+------+------+------+------+------+------|
+                                KC_NO, BP_UNDS,  KC_NO, KC_NO, KC_NO
+                              //`--------------------'  `--------------------'
   ),
   [_GAMING] = LAYOUT_reviung41(
   //,-----------------------------------------.                ,---------------------------------------------.
@@ -147,7 +147,7 @@ void keyboard_post_init_user(void) {
     // Enable the LED layers
     rgblight_layers = my_rgb_layers;
     rgblight_enable_noeeprom(); // Enables RGB, without saving settings
-    rgblight_sethsv_noeeprom(HSV_PURPLE);
+    rgblight_sethsv_noeeprom(HSV_YELLOW);
     rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
 }
 
